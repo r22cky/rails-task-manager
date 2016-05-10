@@ -1,9 +1,15 @@
-<h1>Tasks#index</h1>
+<div class="container text-center">
+  <div class="col-sm-6 col-sm-offset-3 box">
+    <h1>Your Tasks</h1>
 
-<ul>
-<%= @tasks.each do |task| %>
-  <li><%= task.name %> - <%= task.status %></li>
-<% end %>
-</ul>
-
-<p><%= link_to "Create New Task", tasks_new_path %></p>
+    <ul>
+    <% @tasks.each do |task| %>
+      <li><%= task.name %> - Done : <%= task.done %>
+        <div id="update-task" class="btn btn-info"><%= link_to "Update", edit_task_path(task) %></div>
+        <div id="delete-task" class="btn btn-danger"><%= link_to "Delete", task_path(task), method: :delete %></div>
+      </li>
+    <% end %>
+    <p id="new-task" class="btn btn-primary"><%= link_to "Create New Task", new_task_path %></p>
+    </ul>
+  </div>
+</div>

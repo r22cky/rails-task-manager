@@ -1,2 +1,8 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<div class="container text-center">
+  <div class="col-sm-6 col-sm-offset-3 box">
+    <p>Tâche : <%= @task.name %></p>
+    <p>Done ? <%= @task.done %></p>
+
+    <p><%= link_to "Your Tasks", root_path %></p>
+  </div>
+</div>
