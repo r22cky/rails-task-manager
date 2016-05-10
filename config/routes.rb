@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  root 'tasks#index'
   get 'tasks/index'
 
-  get 'tasks/show'
+  # get 'tasks/show'
+  get 'tasks/:id' => 'tasks#show'
 
-  get 'tasks/new'
+  get 'tasks/new' => 'tasks#new'
+  post 'tasks' => 'tasks#create'
 
   get 'tasks/edit'
 
